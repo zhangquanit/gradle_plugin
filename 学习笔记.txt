@@ -1,0 +1,14 @@
+
+https://www.cnblogs.com/mingfeng002/p/11750900.html
+https://github.com/5A59/android-training
+https://github.com/5A59/android-training/blob/master/gradle/gradle%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.md
+
+
+
+
+这里总结几个要点:
+com.android.application 入口类是 AppPlugin，但大部分工作都是在 BasePlugin 里完成的
+build.gradle 里见到的 android {} dsl 是在 BasePlugin.configureExtension() 里声明的
+主要的 task 是在 BasePlugin.createAndroidTasks() 里生成的
+主要 task 的实现可以在 TaskManager 中找到
+transform 会转化成 TransformTask

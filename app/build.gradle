@@ -1,0 +1,26 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+sourceCompatibility=JavaVersion.VERSION_1_8
+targetCompatibility=JavaVersion.VERSION_1_8
+
+dependencies {
+
+    implementation gradleApi()
+}
+
+repositories {
+    mavenCentral()
+}
+
+version = '1.0.2'
+group = 'com.example.plugin'
+archivesBaseName = 'myPlugin'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file:../lib")
+        }
+    }
+}
